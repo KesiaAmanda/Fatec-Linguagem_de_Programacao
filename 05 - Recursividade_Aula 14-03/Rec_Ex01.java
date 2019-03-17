@@ -5,24 +5,18 @@
  */
 
 import javax.swing.JOptionPane;
+
 public class Rec_Ex01 {
-	public static void main (String[] args)
-	{
+	public static void main (String[] args){
 		int valorInicial = 1;
 		JOptionPane.showMessageDialog(null, FunRecSoma(valorInicial));
 	}
 	
-	static int FunRecSoma(int valor)
-	{
-		int valorAC;
-		if (valor == 100)
-		{
+	static int FunRecSoma(int valor){
+		if (valor == 100){
 			return 100;
+		}else{
+			return valor + FunRecSoma(valor+1);
 		}
-		else
-		{
-			valorAC = valor + FunRecSoma(valor+1);
-		}
-		return valorAC;
 	}
 }

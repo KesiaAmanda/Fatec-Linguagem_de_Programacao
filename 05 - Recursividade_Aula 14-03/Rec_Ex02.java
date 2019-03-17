@@ -7,23 +7,16 @@
 import javax.swing.JOptionPane;
 
 public class Rec_Ex02 {
-	public static void main (String[] args)
-	{
+	public static void main (String[] args){
 		int valorLeitura = Integer.parseInt(JOptionPane.showInputDialog("Informe um valor:"));
 		JOptionPane.showMessageDialog(null, FunRecSoma(valorLeitura));
 	}
 	
-	static int FunRecSoma(int valor)
-	{
-		int valorAC;
-		if (valor==1)
-		{
+	static int FunRecSoma(int valor){
+		if (valor==1){
 			return 1;
+		}else{
+			return valor + FunRecSoma(valor-1);
 		}
-		else
-		{
-			valorAC = valor + FunRecSoma(valor-1);
-		}
-		return valorAC;
 	}
 }

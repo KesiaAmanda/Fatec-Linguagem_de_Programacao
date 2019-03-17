@@ -7,24 +7,16 @@
 import javax.swing.JOptionPane;
 
 public class Rec_Ex03 {
-	public static void main (String[] args)
-	{
+	public static void main (String[] args){
 		Double valorLeitura = Double.parseDouble(JOptionPane.showInputDialog("Informe um valor"));
 		JOptionPane.showMessageDialog(null, FunRecDiv(valorLeitura));
 	}
 	
-	static double FunRecDiv(double valor)
-	{
-		double valorDiv, valorSoma;
-		if (valor==1)
-		{
+	static double FunRecDiv(double valor){
+		if (valor==1){
 			return 1;
+		}else{
+			return (1/valor) + FunRecDiv(valor-1);
 		}
-		else
-		{
-			valorDiv = 1/valor;
-			valorSoma = valorDiv + FunRecDiv(valor-1);
-		}
-		return valorSoma;
 	}
 }

@@ -8,24 +8,16 @@
 import javax.swing.JOptionPane;
 
 public class Ex_Recursivo01 {
-	public static void main (String[] args)
-	{
-		int nro;
-		nro = Integer.parseInt(JOptionPane.showInputDialog("Informe um valor"));
+	public static void main (String[] args){
+		int nro = Integer.parseInt(JOptionPane.showInputDialog("Informe um valor"));
 		System.out.println(FFat(nro));
 	}
 	
-	static int FFat(int n)
-	{
-		int Fat;
-		if(n==1)
-		{
+	static int FFat(int n){
+		if(n==1){
 			return n;
-		}
-		else
-		{
-			Fat = n * FFat(n-1);
-			return Fat;
+		}else{
+			return n * FFat(n-1);
 		}
 	}
 }
