@@ -1,5 +1,7 @@
 /*
 Objetivo:		Criar e coletar em um vetor[20]. Classificar este vetor em ordem crescente.
+				A partir do exercício 6 (vetor classificado) solicitar um valor qualquer e verificar a sua
+				existência no vetor (utilizar pesquisa binária).
 Programador:	Kesia Amanda
 Data: 			21/03/2019
 */
@@ -14,14 +16,14 @@ public class Lt01_VetEx06 {
 		classValores(vetValores);
 		mostraOrdem(vetValores);
 		valorBusca = Integer.parseInt(JOptionPane.showInputDialog("Informe um valor para busca:"));
-		JOptionPane.showMessageDialog(null, BuscaValor(valorBusca,19,vetValores[]));
+		JOptionPane.showMessageDialog(null, BuscaValor(valorBusca,19,vetValores));
 		
 		
 	}
 	
 	static int[] lerValores(int vet[]) {
 		for (int cont=0;cont<=19;cont++) {
-			vet[cont]=Integer.parseInt(JOptionPane.showInputDialog("Informe o "+(cont+1)+"� valor:"));
+			vet[cont]=Integer.parseInt(JOptionPane.showInputDialog("Informe o "+(cont+1)+"º valor:"));
 		}
 		return vet;
 	}
@@ -49,17 +51,18 @@ public class Lt01_VetEx06 {
 	}
 	
 	static String BuscaValor(int busca, int maior, int vet[]) {
-		int meio , menor = 0; string result;
+		int meio , menor = 0; String result;
 		do {
 			meio = (menor+maior)/2;
-			if (valorBusca==vetValores[meio]) {
-				return result = ("Valor encontrado!");
-			}else if (valorBusca>vetValores[meio]) {
-				menor=meio+1;
-			}else if (valorBusca<vetValores[meio]){
-				maior=meio-1;
+			if (busca==vet[meio]) {
+				return result = ("Valor encontrado na posição ["+meio+"]!");
+			}
+			if (busca>vet[meio]) {
+				menor=meio;
+			}else{
+				maior=meio;
 			}
 		}while(maior>menor);
-		return result = ("Valor n�o encontrado!");
+		return result = ("Valor não encontrado!");
 	}
 }
