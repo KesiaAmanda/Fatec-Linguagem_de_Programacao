@@ -7,7 +7,7 @@ Programador:	Kesia Amanda
 Data: 			28/03/2019
 */
 
-public class Lt01_MetEx09 {
+public class Lt01_MatEx09 {
 	public static void main (String[] args) {
 		double matValores[][] = new double [4][4];
 		matValores=CarregaMatriz(matValores);
@@ -30,9 +30,9 @@ public class Lt01_MetEx09 {
 	static void MostraMatriz(double matValores[][]) {
 		for (int linha=0;linha<=3;linha++) {
 			for (int coluna=0;coluna<=3;coluna++) {
-				System.out.println(" "+ matValores[linha][coluna]);
+				System.out.print(" "+ matValores[linha][coluna]);
 			}
-			System.out.println("\n");
+			System.out.print("\n");
 		}
 	}
 }

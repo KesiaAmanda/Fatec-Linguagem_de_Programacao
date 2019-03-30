@@ -6,7 +6,7 @@ Data: 			28/03/2019
 
 public class Lt01_MatEx10 {
 	public static void main (String[] args) {
-		int matValores[][] = new int[8][8];
+		long matValores[][] = new long[8][8];
 		int casa = 0, valor = 1;
 		for (int linha=0;linha<=7;linha++) {
 			if (linha%2==0) {
@@ -24,10 +24,15 @@ public class Lt01_MatEx10 {
 		}
 		
 		for (int linha=0;linha<=7;linha++) {
-			for (int coluna=0;coluna<=7;coluna++) {
-				System.out.println(" "+ matValores[linha][coluna]);
+			if (linha%2==0) {
+				System.out.print("Casa: ");
+			}else {
+				System.out.print("Valor: ");
 			}
-			System.out.println("\n");
+			for (int coluna=0;coluna<=7;coluna++) {
+				System.out.print(" "+ matValores[linha][coluna]);
+			}
+			System.out.print("\n");
 		}
 	}
 
