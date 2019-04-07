@@ -112,7 +112,7 @@ public class Caixa_Eletronico {
 	}
 	
 	static void MostraEstatisticas(int vNotas[],int qNotas[]) {
-		String sEstatisticas = "Banco | Maior Saque | Menor Saque | Média dos Saque | Valor Total dos Saques\n";
+		String sEstatisticas = "Banco | Menor Saque | Maior Saque | Média dos Saque | Valor Total dos Saques\n";
 		int sobra = 0;
 		for (int linha=0;linha<=3;linha++) {
 			sEstatisticas+=nBancos[linha];

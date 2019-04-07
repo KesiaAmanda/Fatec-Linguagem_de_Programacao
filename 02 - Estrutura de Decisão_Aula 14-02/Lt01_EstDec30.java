@@ -1,5 +1,5 @@
 /**
- * Objetivo:        Receba a data de nascimento e atual em ano, m�s e dia. Calcule e mostre a 
+ * Objetivo:        Receba a data de nascimento e atual em ano, mês e dia. Calcule e mostre a 
  * 					idade em anos, meses e dias, considerando os anos bissextos.
  * Programadora:    Kesia Amanda
  * Data:            06/04/2019
@@ -11,11 +11,12 @@ public class Lt01_EstDec30
 {
 	public static void main (String[] args)
 	{		
+		int semanas = 0;
 		int diaAtual = Integer.parseInt(JOptionPane.showInputDialog("Informe o dia atual: "));
-		int mesAtual = Integer.parseInt(JOptionPane.showInputDialog("Informe o m�s atual: "));
+		int mesAtual = Integer.parseInt(JOptionPane.showInputDialog("Informe o mês atual: "));
 		int anoAtual = Integer.parseInt(JOptionPane.showInputDialog("Informe o ano atual: "));
 		int diaNasc = Integer.parseInt(JOptionPane.showInputDialog("Informe o seu dia de nascimento: "));
-		int mesNasc = Integer.parseInt(JOptionPane.showInputDialog("Informe o seu m�s de nascimento: "));
+		int mesNasc = Integer.parseInt(JOptionPane.showInputDialog("Informe o seu mês de nascimento: "));
 		int anoNasc = Integer.parseInt(JOptionPane.showInputDialog("Informe o seu ano de nascimento: "));
 		
 		int difDia = diaAtual - diaNasc;
@@ -30,8 +31,13 @@ public class Lt01_EstDec30
 			difMes=12+difMes;
 			difAno-=1;	
 		}
-				
-		System.out.print("Anos: "+difAno+" meses: "+difMes+" dias: "+difDia);
+			
+		if (difDia>=7) {
+			semanas=difDia/7;
+			difDia%=7;
+		}
+		
+		MostrarData(difAno,difMes,semanas,difDia);
 	}
 	
 	static int FuncDiasMesPassado (int mesAtual, int anoAtual) {
@@ -54,5 +60,22 @@ public class Lt01_EstDec30
 		}else {
 			return 28;
 		}
+	}
+	
+	static void MostrarData(int anos, int meses, int semanas, int dias) {
+		String data = "";
+		if (anos>0) {
+			data+=anos+" anos, ";
+		}
+		if (meses>0) {
+			data+=meses+" meses, ";
+		}
+		if (semanas>0) {
+			data+=semanas+" semanas, ";
+		}
+		if (dias>0) {
+			data+=dias+" dias.";
+		}
+		JOptionPane.showMessageDialog(null, data);
 	}
 }
